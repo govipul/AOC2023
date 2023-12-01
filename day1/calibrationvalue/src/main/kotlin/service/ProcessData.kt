@@ -1,12 +1,14 @@
+package service
+
 import model.NumberPos
+import service.CalibrateValue
 
 class ProcessData {
 
-    val cal: CalibrateValue = CalibrateValue()
+    private val cal: CalibrateValue = CalibrateValue()
 
     fun readInput(fileName: String): List<String>? {
         return object {}.javaClass.getResourceAsStream(fileName)?.bufferedReader()?.readLines()
-        //return File(fileName).bufferedReader().readLines();
     }
 
     fun process(): List<Int> {

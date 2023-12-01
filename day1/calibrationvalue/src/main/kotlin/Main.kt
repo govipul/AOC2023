@@ -1,3 +1,5 @@
+import service.ProcessData
+
 fun main() {
     val process = ProcessData()
     val result = process.process()
