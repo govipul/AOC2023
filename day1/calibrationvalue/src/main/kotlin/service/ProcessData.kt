@@ -7,7 +7,7 @@ class ProcessData {
 
     private val cal: CalibrateValue = CalibrateValue()
 
-    fun readInput(fileName: String): List<String>? {
+    private fun readInput(fileName: String): List<String>? {
         return object {}.javaClass.getResourceAsStream(fileName)?.bufferedReader()?.readLines()
     }
 
@@ -19,7 +19,7 @@ class ProcessData {
             data.addAll(cal.getNumber(it))
             data.addAll(cal.getStringToDigit(it))
             val sortedList = data.sortedBy { it.pos }
-            result.add(sortedList.get(0).number*10+sortedList.get(data.lastIndex).number)
+            result.add(sortedList[0].number*10+sortedList[data.lastIndex].number)
         }
         return result
     }
